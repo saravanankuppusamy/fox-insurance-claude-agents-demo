@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fox Insurance Quote Center</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Fox Insurance</h1>
+    <p>Simple insurance quote demo for Claude Code agent workflows.</p>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="quote-title">
+      <h2 id="quote-title">Quick Quote</h2>
+      <form id="quote-form">
+        <label for="product">Product</label>
+        <select id="product" name="product">
+          <option value="auto">Auto</option>
+          <option value="home">Home</option>
+          <option value="travel">Travel</option>
+        </select>
+
+        <label for="coverage">Coverage amount ($)</label>
+        <input id="coverage" name="coverage" type="number" value="50000" min="1000" step="1000" />
+
+        <label for="risk">Risk level</label>
+        <select id="risk" name="risk">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label class="checkbox-row">
+          <input id="bundle" name="bundle" type="checkbox" />
+          Bundle discount
+        </label>
+
+        <button type="submit">Calculate Quote</button>
+      </form>
+      <div id="result" class="result" aria-live="polite">Enter quote details.</div>
+    </section>
+
+    <section class="card" aria-labelledby="products-title">
+      <h2 id="products-title">Products</h2>
+      <div class="products">
+        <article><h3>Auto</h3><p>Liability and vehicle protection.</p></article>
+        <article><h3>Home</h3><p>Property and personal belongings coverage.</p></article>
+        <article><h3>Travel</h3><p>Trip interruption and travel protection.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
